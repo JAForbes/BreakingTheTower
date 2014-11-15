@@ -26,9 +26,9 @@ public class Bitmaps {
     public BufferedImage logo, wonScreen;
 
     public void loadAll() throws IOException {
-        logo = ImageIO.read(Bitmaps.class.getResource("/logo.gif"));
-        wonScreen = ImageIO.read(Bitmaps.class.getResource("/winscreen.gif"));
-        BufferedImage src = ImageIO.read(Bitmaps.class.getResource("/sheet.gif"));
+        logo = ImageIO.read(Bitmaps.class.getResource("res/logo.gif"));
+        wonScreen = ImageIO.read(Bitmaps.class.getResource("res/winscreen.gif"));
+        BufferedImage src = ImageIO.read(Bitmaps.class.getResource("res/sheet.gif"));
         trees = new BufferedImage[16];
         for (int i = 0; i < 16; i++)
             trees[i] = clip(src, 32 + i * 8, 0, 8, 16);
@@ -75,7 +75,7 @@ public class Bitmaps {
 
         island = new BufferedImage(256, 256, BufferedImage.TYPE_INT_ARGB);
         int[] pixels = new int[256 * 256];
-        ImageIO.read(Bitmaps.class.getResource("/island.gif")).getRGB(0, 0, 256, 256, pixels, 0, 256);
+        ImageIO.read(Bitmaps.class.getResource("res/island.gif")).getRGB(0, 0, 256, 256, pixels, 0, 256);
         island.setRGB(0, 0, 256, 256, pixels, 0, 256);
     }
 
